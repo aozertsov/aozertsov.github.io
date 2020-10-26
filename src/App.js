@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+    <div>
+      <div>
+         <Tabs>
+          <TabList>
+            <Tab><Link to="/education">Education</Link></Tab>
+            <Tab><Link to="/experience">Experience</Link></Tab>
+            <Tab><Link to="/skills">Skills</Link></Tab>
+          </TabList>
+
+          <TabPanel>
+            <Route path="/education" component={Education}/>
+          </TabPanel>
+          <TabPanel>
+            <Route path="/experience" component={Experience}/>
+          </TabPanel>
+          <TabPanel>
+            <Route path="/skills" component={Skills}/>
+          </TabPanel>
+        </Tabs>
+      </div>
+    </div>
+  </BrowserRouter>
     </div>
   );
 }
