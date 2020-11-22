@@ -3,6 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Experience from './components/Experience';
+
+import PersistentDrawerLeft from './components/Menu';
+
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function App() {
@@ -30,6 +33,8 @@ function App() {
           </TabPanel>
         </Tabs>
       </div>
+
+      <PersistentDrawerLeft/>
     </div>
   </BrowserRouter>
     </div>
