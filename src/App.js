@@ -6,37 +6,22 @@ import Experience from './components/Experience';
 
 import PersistentDrawerLeft from './components/Menu';
 
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 function App() {
 
   return (
     <div className="App">
       <BrowserRouter>
-    <div>
+      <Link to="/education">Home</Link>
       <div>
-         <Tabs>
-          <TabList>
-            <Tab><Link to="/education">Education</Link></Tab>
-            <Tab><Link to="/experience">Experience</Link></Tab>
-            <Tab><Link to="/skills">Skills</Link></Tab>
-          </TabList>
-
-          <TabPanel>
-            <Route path="/education" component={Education}/>
-          </TabPanel>
-          <TabPanel>
-            <Route path="/experience" component={Experience}/>
-          </TabPanel>
-          <TabPanel>
-            <Route path="/skills" component={Skills}/>
-          </TabPanel>
-        </Tabs>
+        <PersistentDrawerLeft/>
       </div>
-
-      <PersistentDrawerLeft/>
-    </div>
-  </BrowserRouter>
+      <Switch>
+            <Route path="/education" component= {Education}>
+            </Route>
+      </Switch>
+      </BrowserRouter>
     </div>
   );
 }

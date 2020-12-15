@@ -18,6 +18,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import { Link } from "react-router-dom";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -131,7 +133,8 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           {['Образование', 'Опыт', 'Навыки'].map((text, index) => (
-            <ListItem button component="a" href="#section1">
+            
+            <ListItem button component={Link} to="/education">
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
