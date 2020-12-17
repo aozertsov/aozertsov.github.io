@@ -27,31 +27,31 @@ export default function() {
     const classes = useStyles();
     
     return(
-            <TableContainer component={Paper}>
-      <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Период обучения</TableCell>
-            <TableCell align="right">Название заведения</TableCell>
-            <TableCell align="right">Факультет</TableCell>
-            <TableCell align="right">Направление</TableCell>
-            <TableCell align="right">Кафедра</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-        )
+        <TableContainer component={Paper}>
+            <Table className={classes.table} size="small" aria-label="a dense table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Период обучения</TableCell>
+                        <TableCell align="right">Название заведения</TableCell>
+                        <TableCell align="right">Факультет</TableCell>
+                        <TableCell align="right">Направление</TableCell>
+                        <TableCell align="right">Кафедра</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {rows.map((row) => (
+                        <TableRow key={row.name}>
+                        <TableCell component="th" scope="row">
+                            {row.name}
+                        </TableCell>
+                        <TableCell align="right">{row.calories}</TableCell>
+                        <TableCell align="right">{row.fat}</TableCell>
+                        <TableCell align="right">{row.carbs}</TableCell>
+                        <TableCell align="right">{row.protein}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    )
 }
